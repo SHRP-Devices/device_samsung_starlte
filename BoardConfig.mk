@@ -1,5 +1,6 @@
 # Platform
-DEVICE_PATH := device/samsung/starlte
+DEVICE_CODENAME := starlte
+DEVICE_PATH := device/samsung/$(DEVICE_CODENAME)
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-g72
@@ -46,6 +47,7 @@ TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
+LZMA_RAMDISK_TARGETS := recovery
 
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
@@ -57,7 +59,6 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # SHRP flags
-LZMA_RAMDISK_TARGETS := recovery
 LZMA_COMPRESSION := -9
 SHRP_PATH := device/samsung/starlte
 SHRP_MAINTAINER := corsicanu
